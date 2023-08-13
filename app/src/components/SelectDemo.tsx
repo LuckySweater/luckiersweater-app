@@ -7,7 +7,7 @@ import {
   Select,
   Sheet,
   YStack,
-} from '@luckysweater/ui/src'
+} from '@luckysweater/ui'
 import { LinearGradient } from 'tamagui/linear-gradient'
 
 export default function SelectDemo() {

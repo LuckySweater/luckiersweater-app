@@ -8,7 +8,6 @@ export const MyCircle = styled(YStack, {
   borderRadius: 100_000_000,
   overflow: 'hidden',
   backgroundColor: 'lightblue',
-  borderWidth: 1,
 
   variants: {
     size: {

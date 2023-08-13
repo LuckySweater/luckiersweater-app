@@ -1,4 +1,4 @@
-import { Spinner, XStack } from '@luckysweater/ui/src'
+import { Spinner, XStack } from '@luckysweater/ui'
 
 export default function SpinnerDemo() {
   return (

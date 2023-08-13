@@ -7,7 +7,7 @@ import {
 } from '@react-navigation/native'
 import { useFonts } from 'expo-font'
 import { SplashScreen, Stack } from 'expo-router'
-import { TamaguiProvider, Text, Theme } from '@luckysweater/ui/src'
+import { TamaguiProvider, Text, Theme } from '@luckysweater/ui'
 import { MySafeAreaView } from '../components/MySafeAreaView'
 import { config } from '@luckysweater/config'
 

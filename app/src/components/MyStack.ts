@@ -1,4 +1,4 @@
-import { styled, YStack } from '@luckysweater/ui/src'
+import { styled, YStack } from '@luckysweater/ui'
 
 export const MyStack = styled(YStack, {
   name: 'MyStack',

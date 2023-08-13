@@ -1,4 +1,4 @@
-import { Label, Switch, XStack } from '@luckysweater/ui/src'
+import { Label, Switch, XStack } from '@luckysweater/ui'
 
 export default function SwitchDemo() {
   return (

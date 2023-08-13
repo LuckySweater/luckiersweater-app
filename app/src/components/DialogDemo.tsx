@@ -9,7 +9,7 @@ import {
   Sheet,
   Unspaced,
   YStack,
-} from '@luckysweater/ui/src'
+} from '@luckysweater/ui'
 
 import SelectDemo from './SelectDemo'
 

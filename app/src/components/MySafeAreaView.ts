@@ -1,5 +1,5 @@
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { styled } from '@luckysweater/ui/src'
+import { styled } from '@luckysweater/ui'
 
 export const MySafeAreaView = styled(SafeAreaView, {
   name: 'MySafeAreaView',

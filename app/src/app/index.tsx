@@ -1,7 +1,6 @@
 import { useRouter } from 'expo-router'
-import { Button, H1, Paragraph, YStack } from '@luckysweater/ui/src'
+import { Button, H1, MyCircle, Paragraph, YStack } from '@luckysweater/ui'
 import { MyStack } from '../components/MyStack'
-import { MyCircle } from '@luckysweater/ui'
 
 export default function Home() {
   const router = useRouter()
@@ -15,7 +14,7 @@ export default function Home() {
         <H1 textAlign="center">Welcome to Tamagui.</H1>
         <Paragraph textAlign="center">
           Here&apos;s a basic starter to show navigating from one screen to
-          another.
+          another!
         </Paragraph>
 
         <MyCircle size="$10" />
