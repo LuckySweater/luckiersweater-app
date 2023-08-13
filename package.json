@@ -1,0 +1,6 @@
+{
+  "name": "@luckysweater/monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["app", "packages/*"]
+}
