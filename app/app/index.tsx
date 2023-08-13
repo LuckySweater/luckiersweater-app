@@ -1,15 +1,5 @@
-import { Github, Twitter } from '@tamagui/lucide-icons'
-import { Link, useRouter } from 'expo-router'
-import {
-  Button,
-  H1,
-  ListItem,
-  Paragraph,
-  Separator,
-  YGroup,
-  YStack,
-} from '@luckysweater/ui/src'
-
+import { useRouter } from 'expo-router'
+import { Button, H1, Paragraph, YStack } from '@luckysweater/ui/src'
 import { MyStack } from '../components/MyStack'
 import { MyCircle } from '@luckysweater/ui'
 
@@ -34,57 +24,6 @@ export default function Home() {
       <Button onPress={() => router.push('/users/anthony')}>
         Go to user page
       </Button>
-
-      <YStack space="$5">
-        <YGroup
-          bordered
-          separator={<Separator />}
-          theme="green"
-        >
-          <YGroup.Item>
-            <Link
-              asChild
-              href="https://twitter.com/natebirdman"
-              target="_blank"
-            >
-              <ListItem
-                hoverTheme
-                title="Nate"
-                pressTheme
-                icon={Twitter}
-              />
-            </Link>
-          </YGroup.Item>
-          <YGroup.Item>
-            <Link
-              asChild
-              href="https://github.com/tamagui/tamagui"
-              target="_blank"
-            >
-              <ListItem
-                hoverTheme
-                pressTheme
-                title="Tamagui"
-                icon={Github}
-              />
-            </Link>
-          </YGroup.Item>
-          <YGroup.Item>
-            <Link
-              asChild
-              href="https://github.com/ivopr/tamagui-expo"
-              target="_blank"
-            >
-              <ListItem
-                hoverTheme
-                pressTheme
-                title="This Template"
-                icon={Github}
-              />
-            </Link>
-          </YGroup.Item>
-        </YGroup>
-      </YStack>
     </MyStack>
   )
 }

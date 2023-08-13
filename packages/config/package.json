@@ -1,0 +1,15 @@
+{
+  "version": "0.0.0",
+  "name": "@luckysweater/config",
+  "main": "tamagui.config.ts",
+  "dependencies": {
+    "@tamagui/animations-moti": "^1.52.3",
+    "@tamagui/config": "^1.49.10",
+    "@tamagui/font-inter": "^1.52.3",
+    "@tamagui/react-native-media-driver": "^1.52.3",
+    "@tamagui/shorthands": "^1.52.3",
+    "@tamagui/themes": "^1.52.3",
+    "tamagui": "^1.52.3"
+  },
+  "sideEffects": false
+}

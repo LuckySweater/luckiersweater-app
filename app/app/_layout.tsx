@@ -8,9 +8,8 @@ import {
 import { useFonts } from 'expo-font'
 import { SplashScreen, Stack } from 'expo-router'
 import { TamaguiProvider, Text, Theme } from '@luckysweater/ui/src'
-
 import { MySafeAreaView } from '../components/MySafeAreaView'
-import config from '@luckysweater/ui/src/tamagui.config'
+import { config } from '@luckysweater/config'
 
 SplashScreen.preventAutoHideAsync()
 
