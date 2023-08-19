@@ -4,6 +4,8 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/app/.expo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/ui/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/ui/types" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
     </content>

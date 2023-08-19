@@ -1,6 +1,6 @@
 import { createAnimations } from '@tamagui/animations-moti'
 
-export const animations = createAnimations({
+const animations = createAnimations({
   bouncy: {
     type: 'spring',
     damping: 10,
@@ -19,3 +19,5 @@ export const animations = createAnimations({
     stiffness: 250,
   },
 })
+
+export default animations

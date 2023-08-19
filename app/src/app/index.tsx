@@ -1,6 +1,7 @@
 import { useRouter } from 'expo-router'
-import { Button, H1, MyCircle, Paragraph, YStack } from '@luckysweater/ui'
+import { Button, H1, MyCircle2, Paragraph, YStack } from '@luckysweater/ui'
 import { MyStack } from '../components/MyStack'
+import { InventoryItemCard } from '@luckysweater/components'
 
 export default function Home() {
   const router = useRouter()
@@ -17,7 +18,9 @@ export default function Home() {
           another!
         </Paragraph>
 
-        <MyCircle size="$10" />
+        <MyCircle2 size="$10" />
+
+        <InventoryItemCard />
       </YStack>
 
       <Button onPress={() => router.push('/users/anthony')}>

@@ -9,9 +9,12 @@
     "web": "node_modules/.bin/expo start --web"
   },
   "dependencies": {
-    "@tamagui/lucide-icons": "^1.49.10",
-    "@tamagui/babel-plugin": "^1.49.10",
+    "@luckysweater/components": "*",
     "@luckysweater/ui": "*",
+    "@luckysweater/themes": "*",
+    "@nderscore/tamagui-typescript-plugin": "^0.1.0",
+    "@tamagui/babel-plugin": "^1.49.10",
+    "@tamagui/lucide-icons": "^1.49.10",
     "expo": "49.0.6",
     "expo-constants": "~14.4.2",
     "expo-font": "11.4.0",

@@ -1,16 +1,17 @@
 import { createInterFont } from '@tamagui/font-inter'
 import { createMedia } from '@tamagui/react-native-media-driver'
 import { shorthands } from '@tamagui/shorthands'
-import { themes, tokens } from '@tamagui/themes'
+import { tokens } from '@tamagui/themes'
+import { themes } from './themes'
 import { createTamagui } from 'tamagui'
-import { animations } from './animations'
+import animations from './animations'
 
 const headingFont = createInterFont()
 const bodyFont = createInterFont()
 
 export const config = createTamagui({
   animations,
-  defaultTheme: 'dark',
+  defaultTheme: 'light',
   shouldAddPrefersColorThemes: false,
   themeClassNameOnRoot: false,
   shorthands,

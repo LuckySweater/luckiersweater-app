@@ -1,0 +1,9 @@
+{
+  "version": "0.0.0",
+  "name": "@luckysweater/components",
+  "main": "index.ts",
+  "sideEffects": false,
+  "dependencies": {
+    "@luckysweater/ui": "*"
+  }
+}

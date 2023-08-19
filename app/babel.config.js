@@ -17,7 +17,7 @@ module.exports = function (api) {
         '@tamagui/babel-plugin',
         {
           exclude: /node_modules/,
-          components: ['@app/ui', 'tamagui'],
+          components: ['@luckysweater/ui', 'tamagui'],
           config: './tamagui.config.ts',
           logTimings: true,
         },

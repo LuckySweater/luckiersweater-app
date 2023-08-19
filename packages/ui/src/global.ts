@@ -1,4 +1,4 @@
-import { config } from '@luckysweater/config'
+import { config } from '@luckysweater/themes'
 
 export type Conf = typeof config
 

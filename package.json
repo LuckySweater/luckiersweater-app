@@ -2,5 +2,10 @@
   "name": "@luckysweater/monorepo",
   "version": "1.0.0",
   "private": true,
-  "workspaces": ["app", "packages/*"]
+  "workspaces": ["app", "packages/*"],
+  "scripts": {
+    "watch": "yarn workspaces foreach -pi run watch",
+    "postinstall": "yarn build",
+    "build": "yarn workspaces foreach --exclude next-app -pi run build"
+  }
 }

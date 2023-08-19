@@ -1,15 +1,10 @@
 {
   "name": "@luckysweater/ui",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": true,
-  "types": "./types/index.d.ts",
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "module:jsx": "dist/jsx",
+  "main": "index.ts",
   "files": [
-    "types",
-    "src",
-    "dist"
+    "src"
   ],
   "sideEffects": [
     "*.css"
@@ -19,7 +14,8 @@
     "watch": "tamagui-build --watch"
   },
   "dependencies": {
-    "@luckysweater/config": "*",
+    "@luckysweater/themes": "*",
+    "@nderscore/tamagui-typescript-plugin": "^0.1.0",
     "tamagui": "^1.52.3"
   },
   "devDependencies": {

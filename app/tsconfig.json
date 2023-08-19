@@ -1,6 +1,13 @@
 {
   "compilerOptions": {
-     "module": "ES2020"
+   "module": "ES2020",
+    "plugins": [
+      {
+        "name": "@nderscore/tamagui-typescript-plugin",
+        "pathToApp": "./src",
+        "defaultTheme": "light"
+      }
+    ]
   },
   "extends": "expo/tsconfig.base"
 }
