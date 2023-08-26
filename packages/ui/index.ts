@@ -1,2 +1,5 @@
-export * from 'tamagui'
-export * from './src/MyCircle'
+export { TamaguiProvider, styled, setupReactNative } from '@tamagui/core'
+export * from '@tamagui/text'
+export * from './src/Circle'
+export * from './src/Stack/Stack'
+export * from './src/Button'

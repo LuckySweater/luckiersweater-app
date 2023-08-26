@@ -3,8 +3,8 @@ import { createMedia } from '@tamagui/react-native-media-driver'
 import { shorthands } from '@tamagui/shorthands'
 import { themes } from './themes'
 import { tokens } from './tokens'
-import { createTamagui } from 'tamagui'
-import animations from './animations'
+import { createTamagui } from '@tamagui/core'
+import { animations } from './animations'
 
 const headingFont = createInterFont()
 const bodyFont = createInterFont()
@@ -34,7 +34,5 @@ export const config = createTamagui({
     gtLg: { minWidth: 1280 + 1 },
     short: { maxHeight: 820 },
     tall: { minHeight: 820 },
-    hoverNone: { hover: 'none' },
-    pointerCoarse: { pointer: 'coarse' },
   }),
 })

@@ -1,13 +1,12 @@
-import { createSoftenMask, createThemeBuilder } from '@tamagui/theme-builder'
-import palettes from './palettes'
-import templates from './templates'
+import { createThemeBuilder } from '@tamagui/theme-builder'
+import { palettes, templates } from './templates'
+import { component_themes } from './component-themes'
+import { masks } from './masks'
 
 const themesBuilder = createThemeBuilder()
   .addPalettes(palettes)
   .addTemplates(templates)
-  .addMasks({
-    soften: createSoftenMask(),
-  })
+  .addMasks(masks)
   .addThemes({
     light: {
       template: 'base',
@@ -18,6 +17,7 @@ const themesBuilder = createThemeBuilder()
       palette: 'dark',
     },
   })
+  .addChildThemes(component_themes)
 // .addChildThemes({
 // subtle: {
 //   mask: 'soften',

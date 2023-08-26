@@ -1,48 +1,41 @@
-const shades = {
-  shade50: 0,
-  shade100: 1,
-  shade200: 2,
-  shade300: 3,
-  shade400: 4,
-  shade500: 5,
-  shade600: 6,
-  shade700: 7,
-  shade800: 8,
-  shade900: 9,
-  shade950: 10,
+import { color } from './tokens'
+
+// https://uicolors.app/create
+const tuscany_palette = [
+  color.silk, // 0
+  '#fcf5f0', // 1
+  '#f9e8db', // 2
+  '#f1ceb7', // 3
+  '#e8ae89', // 4
+  '#de8459', // 5
+  '#d66539', // 6
+  '#c94f2e', // 7 - Primary
+  '#a63d28', // 8
+  '#853227', // 9
+  '#6c2b22', // 10
+  '#3a1410', // 11
+  color.mine_shaft, // 12
+]
+
+export const palettes = {
+  light: tuscany_palette,
+  dark: [...tuscany_palette].reverse(),
 }
 
 // templates use the palette and specify index
 // negative goes backwards from end so -1 is the last item
 const template = {
-  ...shades,
-  anthony: 0,
+  primary: 7, // tuscany
 
-  background: 0,
-  backgroundHover: 3,
-  backgroundPress: 4,
-  backgroundFocus: 5,
-  backgroundStrong: 0,
-  backgroundTransparent: 0,
-  color: -1,
-  colorHover: -2,
-  colorPress: -1,
-  colorFocus: -2,
-  colorTransparent: -0,
-  borderColor: 5,
-  borderColorHover: 6,
-  borderColorFocus: 4,
-  borderColorPress: 5,
-  placeholderColor: -4,
+  background: 0, // silk
+  backgroundPress: 3,
+  color: -1, // mine shaft
+  border: -1,
+  placeholder: 5,
 
-  shadowColor: 0,
-  shadowColorFocus: 0,
-  shadowColorHover: 0,
-  shadowColorPress: 0,
+  shadow: -1,
 }
 
-const templates = {
+export const templates = {
   base: template,
 }
-
-export default templates

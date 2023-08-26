@@ -1,13 +1,13 @@
-import { GetProps, styled, YStack } from 'tamagui'
+import { GetProps, Stack, styled } from '@tamagui/core'
 
-export const MyCircle = styled(YStack, {
-  name: 'MyCircle',
+export const Circle = styled(Stack, {
+  name: 'Circle',
 
   alignItems: 'center',
   justifyContent: 'center',
   borderRadius: 100_000_000,
   overflow: 'hidden',
-  backgroundColor: '$background',
+  backgroundColor: '$mules',
 
   variants: {
     size: {
@@ -18,7 +18,11 @@ export const MyCircle = styled(YStack, {
         }
       },
     },
+  } as const,
+
+  defaultVariants: {
+    size: '$leoncio',
   },
 })
 
-export type MyCircleProps = GetProps<typeof MyCircle>
+export type CircleProps = GetProps<typeof Circle>

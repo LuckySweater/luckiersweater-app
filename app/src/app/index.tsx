@@ -1,14 +1,13 @@
 import { useRouter } from 'expo-router'
-import { Button, H1, MyCircle, Paragraph, YStack } from '@luckysweater/ui'
-import { MyStack } from '../components/MyStack'
+import { Button, Circle, H1, Paragraph, Stack } from '@luckysweater/ui'
 import { InventoryItemCard } from '@luckysweater/components'
 
 export default function Home() {
   const router = useRouter()
 
   return (
-    <MyStack>
-      <YStack
+    <Stack>
+      <Stack
         space="$4"
         maxWidth={600}
       >
@@ -18,14 +17,17 @@ export default function Home() {
           another!
         </Paragraph>
 
-        <MyCircle size="$10" />
+        <Stack row>
+          <Circle size="$10" />
+          <Circle />
+        </Stack>
 
         <InventoryItemCard />
-      </YStack>
+      </Stack>
 
       <Button onPress={() => router.push('/users/anthony')}>
-        Go to user page
+        <Button.Text>Go to user page</Button.Text>
       </Button>
-    </MyStack>
+    </Stack>
   )
 }

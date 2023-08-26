@@ -1,36 +1,38 @@
 import { ArrowLeft } from '@tamagui/lucide-icons'
 import { useLocalSearchParams, useRouter } from 'expo-router'
-import { Button, H3, H6, XStack } from '@luckysweater/ui'
-
-import DialogDemo from '../../components/DialogDemo'
-import { MyStack } from '../../components/MyStack'
-import SelectDemo from '../../components/SelectDemo'
-import SpinnerDemo from '../../components/SpinnerDemo'
-import SwitchDemo from '../../components/SwitchDemo'
+import { Button, H3, H6, Stack } from '@luckysweater/ui'
 
 export default function User() {
   const router = useRouter()
   const params = useLocalSearchParams()
 
   return (
-    <MyStack justifyContent="flex-start">
-      <XStack
+    <Stack
+      bg="red"
+      justifyContent="flex-start"
+    >
+      <Stack
+        row
         alignItems="center"
         space="$2"
       >
-        <Button
-          icon={ArrowLeft}
-          onPress={router.back}
-        />
+        <Button onPress={router.back}>
+          <Button.Icon>
+            <ArrowLeft />
+          </Button.Icon>
+
+          <Button.Text>Back</Button.Text>
+        </Button>
+
         <H3>{params.user}&apos;s user page</H3>
-      </XStack>
+      </Stack>
 
       <H6>Some Tamagui components in action.</H6>
 
-      <DialogDemo />
-      <SelectDemo />
-      <SpinnerDemo />
-      <SwitchDemo />
-    </MyStack>
+      {/*<DialogDemo />*/}
+      {/*<SelectDemo />*/}
+      {/*<SpinnerDemo />*/}
+      {/*<SwitchDemo />*/}
+    </Stack>
   )
 }

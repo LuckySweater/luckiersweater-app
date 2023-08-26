@@ -7,7 +7,7 @@ export const InventoryItemCard: React.FC = () => {
 
 const Container = styled(Stack, {
   width: '$10',
-  height: '$',
+  height: '$10',
   backgroundColor: 'lightcoral',
   borderRadius: 20,
 })

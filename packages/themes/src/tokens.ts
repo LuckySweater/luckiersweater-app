@@ -1,19 +1,11 @@
-// should roughly map to button/input etc height at each level
-// fonts should match that height/lineHeight at each stop
-// so these are really non-linear on purpose
-// why?
-//   - at sizes <1, used for fine grained things (borders, smallest paddingY)
-//     - so smallest padY should be roughly 1-4px so it can join with lineHeight
-//   - at sizes >=1, have to consider "pressability" (jumps up)
-//   - after that it should go upwards somewhat naturally
-//   - H1 / headings top out at 10 naturally, so after 10 we can go upwards faster
-//  but also one more wrinkle...
-//  space is used in conjunction with size
-//  i'm setting space to generally just a fixed fraction of size (~1/3-2/3 still fine tuning)
-import { createTokens } from 'tamagui'
+import { createTokens } from '@tamagui/core'
 
 export const size = {
-  $bartolomeu: 0,
+  $small: 38,
+  $medium: 46,
+  $large: 60,
+
+  $bartolomeu: 120,
   $0: 0,
   '$0.25': 2,
   '$0.5': 4,
@@ -45,38 +37,42 @@ export const size = {
   $20: 284,
 }
 
-type SizeKeysIn = keyof typeof size
-type Sizes = {
-  [Key in SizeKeysIn extends `$${infer Key}` ? Key : SizeKeysIn]: number
+export const space = {
+  $small: 15,
+  $medium: 20,
+  $large: 25,
+
+  $leoncio: 120,
+  $0: 0,
+  '$0.25': 0.5,
+  '$0.5': 1,
+  '$0.75': 1.5,
+  $1: 2,
+  '$1.5': 4,
+  $2: 7,
+  '$2.5': 10,
+  $3: 13,
+  '$3.5': 16,
+  $4: 18,
+  $true: 44,
+  '$4.5': 21,
+  $5: 24,
+  $6: 32,
+  $7: 39,
+  $8: 46,
+  $9: 53,
+  $10: 60,
+  $11: 74,
+  $12: 88,
+  $13: 102,
+  $14: 116,
+  $15: 130,
+  $16: 144,
+  $17: 144,
+  $18: 158,
+  $19: 172,
+  $20: 186,
 }
-type SizeKeys = `${keyof Sizes extends `${infer K}` ? K : never}`
-
-const spaces = Object.entries(size).map(([k, v]) => {
-  return [k, sizeToSpace(v)] as const
-})
-
-// a bit odd but keeping backward compat for values >8 while fixing below
-function sizeToSpace(v: number) {
-  if (v === 0) return 0
-  if (v === 2) return 0.5
-  if (v === 4) return 1
-  if (v === 8) return 1.5
-  if (v <= 16) return Math.round(v * 0.333)
-  return Math.floor(v * 0.7 - 12)
-}
-
-const spacesNegative = spaces.slice(1).map(([k, v]) => [`-${k.slice(1)}`, -v])
-
-type SizeKeysWithNegatives =
-  | Exclude<`-${SizeKeys extends `$${infer Key}` ? Key : SizeKeys}`, '-0'>
-  | SizeKeys
-
-export const space: {
-  [Key in SizeKeysWithNegatives]: Key extends keyof Sizes ? Sizes[Key] : number
-} = {
-  ...Object.fromEntries(spaces),
-  ...Object.fromEntries(spacesNegative),
-} as any
 
 export const zIndex = {
   0: 0,
@@ -88,10 +84,25 @@ export const zIndex = {
 }
 
 export const color = {
-  tuscany: '#c94f2e',
+  silk: '#FCFAF7',
+  cream: '#F3F0EB',
+  cotton: '#F5F2EB',
+  jelly_shoes: '#E5D9D4',
+  y2k: '#DFE84F',
+  yard_sale: '#F4FACD',
+  tote_bag: '#F0DBB0',
+  mules: '#c99d3b',
+  chambray: '#A7CBDF',
+  linen: '#C9BCA0',
+  tuscany: '#C94F2E',
+  mine_shaft: '#323232',
 }
 
 export const radius = {
+  $small: 4,
+  $medium: 8,
+  $large: 12,
+
   0: 0,
   1: 3,
   2: 5,

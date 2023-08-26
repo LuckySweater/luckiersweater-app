@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useColorScheme } from 'react-native'
+import { Image, Text, useColorScheme, View } from 'react-native'
 import {
   DarkTheme,
   DefaultTheme,
@@ -7,12 +7,15 @@ import {
 } from '@react-navigation/native'
 import { useFonts } from 'expo-font'
 import { SplashScreen, Stack } from 'expo-router'
-import { TamaguiProvider } from '@luckysweater/ui'
+import { setupReactNative, styled, TamaguiProvider } from '@luckysweater/ui'
 import { config } from '@luckysweater/themes'
+import { SafeAreaView } from 'react-native-safe-area-context'
+
+setupReactNative({ View, Text, Image })
 
 SplashScreen.preventAutoHideAsync()
 
-export default function Layout() {
+const Layout = () => {
   const colorScheme = useColorScheme()
 
   const [loaded] = useFonts({
@@ -34,12 +37,26 @@ export default function Layout() {
       defaultTheme={colorScheme}
     >
       <ThemeProvider value={colorScheme === 'light' ? DefaultTheme : DarkTheme}>
-        <Stack
-          screenOptions={{
-            headerShown: false,
-          }}
-        />
+        <Container>
+          <Stack
+            screenOptions={{
+              headerShown: false,
+              contentStyle: {
+                backgroundColor: 'transparent',
+              },
+            }}
+          />
+        </Container>
       </ThemeProvider>
     </TamaguiProvider>
   )
 }
+
+export default Layout
+
+const ASDA = styled(Stack, {})
+
+const Container = styled(SafeAreaView, {
+  flex: 1,
+  backgroundColor: '$background',
+})

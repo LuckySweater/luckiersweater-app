@@ -4,17 +4,16 @@
   "main": "index.ts",
   "sideEffects": false,
   "dependencies": {
-    "@tamagui/animations-moti": "^1.52.3",
-    "@tamagui/colors": "^1.52.3",
-    "@tamagui/config": "^1.49.10",
-    "@tamagui/font-inter": "^1.52.3",
-    "@tamagui/react-native-media-driver": "^1.52.3",
-    "@tamagui/shorthands": "^1.52.3",
-    "@tamagui/theme-builder": "^1.52.3",
-    "@tamagui/themes": "^1.52.3",
-    "tamagui": "^1.52.3"
-  },
-  "devDependencies": {
-    "@tamagui/cli": "^1.52.7"
+    "@tamagui/animations-moti": "^1.57.1",
+    "@tamagui/colors": "^1.57.1",
+    "@tamagui/config": "^1.57.1",
+    "@tamagui/core": "^1.57.1",
+    "@tamagui/font-inter": "^1.57.1",
+    "@tamagui/get-font-sized": "^1.57.1",
+    "@tamagui/react-native-media-driver": "^1.57.1",
+    "@tamagui/shorthands": "^1.57.1",
+    "@tamagui/theme-builder": "^1.57.1",
+    "@tamagui/themes": "^1.57.1",
+    "polished": "^4.2.2"
   }
 }
