@@ -7,7 +7,12 @@ import {
 } from '@react-navigation/native'
 import { useFonts } from 'expo-font'
 import { SplashScreen, Stack } from 'expo-router'
-import { setupReactNative, styled, TamaguiProvider } from '@luckysweater/ui'
+import {
+  getTokens,
+  setupReactNative,
+  styled,
+  TamaguiProvider,
+} from '@luckysweater/ui'
 import { config } from '@luckysweater/themes'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
@@ -15,34 +20,42 @@ setupReactNative({ View, Text, Image })
 
 SplashScreen.preventAutoHideAsync()
 
-const Layout = () => {
-  const colorScheme = useColorScheme()
+export const unstable_settings = {
+  initialRouteName: 'index',
+}
 
-  const [loaded] = useFonts({
+const AppLayout = () => {
+  const color_scheme = useColorScheme()
+
+  const [loaded, error] = useFonts({
     Inter: require('@tamagui/font-inter/otf/Inter-Medium.otf'),
     InterBold: require('@tamagui/font-inter/otf/Inter-Bold.otf'),
   })
 
   useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync()
-    }
-  }, [loaded])
+    if (loaded || error) SplashScreen.hideAsync()
+  }, [loaded, error])
 
   if (!loaded) return null
 
   return (
     <TamaguiProvider
       config={config}
-      defaultTheme={colorScheme}
+      defaultTheme={color_scheme}
     >
-      <ThemeProvider value={colorScheme === 'light' ? DefaultTheme : DarkTheme}>
+      <ThemeProvider
+        value={color_scheme === 'light' ? DefaultTheme : DarkTheme}
+      >
         <Container>
           <Stack
             screenOptions={{
               headerShown: false,
+              // statusBarStyle: color_scheme === 'light' ? 'dark' : 'light',
               contentStyle: {
-                backgroundColor: 'transparent',
+                backgroundColor:
+                  color_scheme === 'light'
+                    ? getTokens().color.$silk.val
+                    : getTokens().color.$black.val,
               },
             }}
           />
@@ -52,9 +65,7 @@ const Layout = () => {
   )
 }
 
-export default Layout
-
-const ASDA = styled(Stack, {})
+export default AppLayout
 
 const Container = styled(SafeAreaView, {
   flex: 1,

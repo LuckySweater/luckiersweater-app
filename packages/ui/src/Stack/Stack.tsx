@@ -1,20 +1,17 @@
-import { Stack as TamaguiStack, styled } from '@tamagui/core'
-
+import { styled, View } from '@tamagui/core'
 import { getElevation } from './getElevation'
 
-export const fullscreenStyle = {
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  right: 0,
-  bottom: 0,
-} as const
-
-export const Stack = styled(TamaguiStack, {
+export const Stack = styled(View, {
   flexDirection: 'column',
   variants: {
     fullscreen: {
-      true: fullscreenStyle,
+      true: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+      } as const,
     },
     elevation: {
       '...size': getElevation,

@@ -5,7 +5,6 @@ export const size = {
   $medium: 46,
   $large: 60,
 
-  $bartolomeu: 120,
   $0: 0,
   '$0.25': 2,
   '$0.5': 4,
@@ -42,7 +41,6 @@ export const space = {
   $medium: 20,
   $large: 25,
 
-  $leoncio: 120,
   $0: 0,
   '$0.25': 0.5,
   '$0.5': 1,
@@ -96,6 +94,8 @@ export const color = {
   linen: '#C9BCA0',
   tuscany: '#C94F2E',
   mine_shaft: '#323232',
+  white: '#FFFFFF',
+  black: '#000000',
 }
 
 export const radius = {

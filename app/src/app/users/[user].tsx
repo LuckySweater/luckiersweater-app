@@ -7,10 +7,7 @@ export default function User() {
   const params = useLocalSearchParams()
 
   return (
-    <Stack
-      bg="red"
-      justifyContent="flex-start"
-    >
+    <Stack justifyContent="flex-start">
       <Stack
         row
         alignItems="center"

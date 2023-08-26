@@ -21,6 +21,7 @@ export const ButtonFrame = styled(Stack, {
   backgroundColor: '$background',
   alignItems: 'center',
   flexDirection: 'row',
+  justifyContent: 'center',
 
   pressStyle: {
     backgroundColor: '$backgroundPress',
@@ -32,16 +33,20 @@ export const ButtonFrame = styled(Stack, {
         return {
           height: tokens.size[size],
           borderRadius: tokens.radius[size],
-
-          // note the getSpace and getSize helpers will let you shift down/up token sizes
-          // whereas with gap we just multiply by 0.2
-          // this is a stylistic choice, and depends on your design system values
-          gap: tokens.space[size].val * 0.2,
-
-          paddingHorizontal: getSpace(size, {
-            shift: -1,
-          }),
+          paddingHorizontal: getSpace(size, { shift: -1 }),
         }
+      },
+    },
+    round: {
+      true: (_, { tokens, props }) => {
+        const height = tokens.size[(props as any).size].val
+
+        return {
+          borderRadius: height / 2,
+        }
+      },
+      false: {
+        borderRadius: 0,
       },
     },
   } as const,
@@ -54,10 +59,11 @@ export const ButtonFrame = styled(Stack, {
 type ButtonProps = GetProps<typeof ButtonFrame>
 
 export const ButtonText = styled(Text, {
-  name: 'ButtonText',
+  name: 'Button',
   context: ButtonContext,
   color: '$color',
   userSelect: 'none',
+  textAlign: 'center',
 
   variants: {
     size: {

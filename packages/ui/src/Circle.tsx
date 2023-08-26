@@ -21,7 +21,7 @@ export const Circle = styled(Stack, {
   } as const,
 
   defaultVariants: {
-    size: '$leoncio',
+    size: '$large',
   },
 })
 
