@@ -2,7 +2,6 @@ import { createSoftenMask, createThemeBuilder } from '@tamagui/theme-builder'
 import palettes from './palettes'
 import templates from './templates'
 
-// https://uicolors.app/create
 const themesBuilder = createThemeBuilder()
   .addPalettes(palettes)
   .addTemplates(templates)
@@ -19,10 +18,10 @@ const themesBuilder = createThemeBuilder()
       palette: 'dark',
     },
   })
-  .addChildThemes({
-    // subtle: {
-    //   mask: 'soften',
-    // },
-  })
+// .addChildThemes({
+// subtle: {
+//   mask: 'soften',
+// },
+// })
 
 export const themes = themesBuilder.build()

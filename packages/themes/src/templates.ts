@@ -16,6 +16,8 @@ const shades = {
 // negative goes backwards from end so -1 is the last item
 const template = {
   ...shades,
+  anthony: 0,
+
   background: 0,
   backgroundHover: 3,
   backgroundPress: 4,

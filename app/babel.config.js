@@ -13,15 +13,16 @@ module.exports = function (api) {
           include: ['TAMAGUI_TARGET'],
         },
       ],
-      [
-        '@tamagui/babel-plugin',
-        {
-          exclude: /node_modules/,
-          components: ['@luckysweater/ui', 'tamagui'],
-          config: './tamagui.config.ts',
-          logTimings: true,
-        },
-      ],
+      // Can be enabled later on. Right now is causing some weird behavior
+      // [
+      //   '@tamagui/babel-plugin',
+      //   {
+      //     exclude: /node_modules/,
+      //     components: ['@luckysweater/ui', 'tamagui'],
+      //     config: './tamagui.config.ts',
+      //     logTimings: true,
+      //   },
+      // ],
       'react-native-reanimated/plugin',
       'expo-router/babel',
     ],

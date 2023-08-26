@@ -1,4 +1,4 @@
-import { Suspense, useEffect } from 'react'
+import { useEffect } from 'react'
 import { useColorScheme } from 'react-native'
 import {
   DarkTheme,
@@ -7,8 +7,7 @@ import {
 } from '@react-navigation/native'
 import { useFonts } from 'expo-font'
 import { SplashScreen, Stack } from 'expo-router'
-import { TamaguiProvider, Text, Theme } from '@luckysweater/ui'
-import { MySafeAreaView } from '../components/MySafeAreaView'
+import { TamaguiProvider } from '@luckysweater/ui'
 import { config } from '@luckysweater/themes'
 
 SplashScreen.preventAutoHideAsync()
@@ -30,22 +29,17 @@ export default function Layout() {
   if (!loaded) return null
 
   return (
-    <TamaguiProvider config={config}>
-      <Suspense fallback={<Text>Loading...</Text>}>
-        <Theme name={colorScheme}>
-          <ThemeProvider
-            value={colorScheme === 'light' ? DefaultTheme : DarkTheme}
-          >
-            <MySafeAreaView>
-              <Stack
-                screenOptions={{
-                  headerShown: false,
-                }}
-              />
-            </MySafeAreaView>
-          </ThemeProvider>
-        </Theme>
-      </Suspense>
+    <TamaguiProvider
+      config={config}
+      defaultTheme={colorScheme}
+    >
+      <ThemeProvider value={colorScheme === 'light' ? DefaultTheme : DarkTheme}>
+        <Stack
+          screenOptions={{
+            headerShown: false,
+          }}
+        />
+      </ThemeProvider>
     </TamaguiProvider>
   )
 }
